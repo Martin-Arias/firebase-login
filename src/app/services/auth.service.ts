@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { UsuarioModel} from '../models/usuario.model';
 import { map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
   private URL = 'https://identitytoolkit.googleapis.com/v1/accounts'
-  private API_KEY = 'AIzaSyDKDRevsU8-Jt4pBdl4MTEXNh8V5UMtHrw'
+  private API_KEY = environment.API_KEY
 
   userToken: string;
   // CREAR NUEVO USUARIO
@@ -71,5 +72,9 @@ export class AuthService {
       this.userToken = '';
     }
     return this.userToken
+  }
+
+  isAuthenticated():boolean{
+   return this.userToken.length > 2;
   }
 }

@@ -48,19 +48,30 @@
 						required
 						placeholder="Contaseña">
 					</div>
-					
+					<!-- RECORDAR USUARIO -->
 					<div class="row align-items-center remember">
-						<input type="checkbox">Recordarme
+						<input 
+						[(ngModel)]="recordar"
+						name="remember"
+						type="checkbox">
+						Recordarme
 					</div>
+					<!-- SUBMIT BTN -->
 					<div class="form-group mt-1">
-						<input type="submit" value="Ingresar" class="btn btn-block login_btn">
+						<input 
+						type="submit" 
+						value="Ingresar" 
+						class="btn btn-block login_btn">
 					</div>
 				</form>
 			</div>
+			<!-- CARD FOOTER -->
 			<div class="card-footer">
+				<!-- REGISTER LINK -->
 				<div class="d-flex justify-content-center links ">
 					¿No tienes cuenta?<a routerLink="/register">Registrarme</a>
 				</div>
+				<!-- FORGOT PASSWORD -->
 				<div class="d-flex justify-content-center ">
 					<a href="#">Olvide mi contraseña</a>
 				</div>
